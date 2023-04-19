@@ -22,7 +22,8 @@
         </div>
         <div class="form-groep">
             <label for="prijsProduct">Prijs product</label>
-            <input type="text" name="prijsProduct" id="prijsProduct">
+            <input type="decimal" name="prijsProduct" id="prijsProduct">
+            input:
         </div>
         <div class="form-groep">
             <label for="merkProduct">Merk product</label>
