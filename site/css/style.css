@@ -3,6 +3,11 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+header.header {
+    width: 100%;
+    background-color: gold;
+}
+
 label {
     width: 148px;
     display: inline-block;
@@ -10,4 +15,38 @@ label {
 
 .form-groep {
     margin: 10px 0px;
+}
+
+.container {
+    margin: 20px;
+}
+
+.product-container {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-name {
+    margin: 10px 0px;
+}
+
+.product-image {
+    max-width: 150px;
+    max-height: 150px;
+    aspect-ratio: 1 / 1;
+    /* border-radius: 50%; */
 }
