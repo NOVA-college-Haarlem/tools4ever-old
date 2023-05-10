@@ -23,7 +23,6 @@ $tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <body>
     <table>
-
         <?php foreach ($tools as $tool) : ?>
             <tr>
                 <td><?php echo $tool['tool_id'] ?></td>
@@ -32,7 +31,6 @@ $tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <td><?php echo $tool['tool_price'] ?></td>
                 <td><?php echo $tool['tool_brand'] ?></td>
                 <td>
-
                     <a href="tools-detail.php?tool_id=<?php echo $tool['tool_id'] ?>">detail bekijken</a>
                 </td>
             </tr>
