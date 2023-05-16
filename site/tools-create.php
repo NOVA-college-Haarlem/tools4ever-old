@@ -1,3 +1,10 @@
+<?php
+require 'database.php';
+
+$sql = "SELECT * FROM categories";
+$result = mysqli_query($conn, $sql);
+$categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +15,6 @@
     <title>Nieuw product invoeren</title>
 
 </head>
-
 <body>
     <h1>Nieuw product</h1>
     <form action="verwerk-nieuw-product.php" method="post">
@@ -18,7 +24,13 @@
         </div>
         <div class="form-groep">
             <label for="categorieProduct">Categorie product</label>
-            <input type="text" name="categorieProduct" id="categorieProduct">
+            <select name="categorieProduct" id="">
+                <option value="" disabled selected>Selecteer categorie</option>
+                <?php foreach ($categories as $category) : ?>
+                    <option value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
+                <?php endforeach; ?>
+
+            </select>
         </div>
         <div class="form-groep">
             <label for="prijsProduct">Prijs product</label>

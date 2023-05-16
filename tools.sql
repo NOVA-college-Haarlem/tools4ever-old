@@ -7,6 +7,18 @@ CREATE TABLE tools (
     PRIMARY KEY (tool_id)
 );
 
+INSERT INTO categories(name) VALUES 
+('Handgereedschap'),
+('Elektrisch gereedschap'),
+('Tegelgereedschap'),
+('Meetgereedschap'),
+('Kitgereedschap'),
+('Lijmgereedschap'),
+('Stofafzuiging'),
+('Verfgereedschap');
+
+
+
 
 INSERT INTO tools (tool_name, tool_category, tool_price, tool_brand)
 VALUES

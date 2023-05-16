@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+
 $email  = $_POST['email'];
 $password  = $_POST['password'];
 
@@ -28,31 +29,32 @@ if ($user['password'] === $_POST['password']) {
     session_start();
 
     $_SESSION['isIngelogd'] = true;
-    
-    $_SESSION['voornaam']  = $user['firstname'];
-    
-    $_SESSION['role'] = $user['role'];
 
+    $_SESSION['voornaam']  = $user['firstname'];
+
+    $_SESSION['role'] = $user['role'];
 
     switch ($user['role']) {
         case 'admin':
-            header("location: admin-dashboard.php");
+            header('location: admin-dashboard.php');
             exit;
             break;
         case 'employee':
-            header("location: dashboard.php");
+            header('location: employee-dashboard.php');
             exit;
             break;
         case 'customer':
-            header("location: store.php");
+            header('location: store.php');
             exit;
-            break;
 
         default:
-            header("location: store.php");
+            header('location: store.php');
             exit;
             break;
     }
+
+    header("location: dashboard.php");
+    exit;
 }
 
 
